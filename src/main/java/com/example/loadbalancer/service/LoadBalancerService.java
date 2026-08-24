@@ -60,7 +60,8 @@ public class LoadBalancerService {
 
         while( headerNames.hasMoreElements() ){
             String headerName = headerNames.nextElement();
-            if( headerName.equalsIgnoreCase("Host") ) continue;
+            if( headerName.equalsIgnoreCase("Host")
+                    || headerName.equalsIgnoreCase("Connection") ) continue;
 
             Enumeration<String> values = request.getHeaders(headerName);
 
