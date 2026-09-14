@@ -47,6 +47,7 @@ public class QuorumGossipProtocol implements HealthCheck{
         for( int i = 0 ; i < futures.size(); i++ ){
             try{
                 HttpResponse response = futures.get(i).join();
+                System.out.println(response.toString());
                 if( response.statusCode()==200 ){
                     healthyServers.add(serverRegistry.getServers().get(i));
                 }
